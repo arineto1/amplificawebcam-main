@@ -21,23 +21,8 @@
     --hc-border-color: #ffffff;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color-dark);
-    background-color: var(--background-light);
-    line-height: 1.6;
-    font-size: 16px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: var(--transition-normal);
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text-color-dark); background-color: var(--background-light); line-height: 1.6; font-size: 16px; min-height: 100vh; display: flex; flex-direction: column; transition: var(--transition-normal); }
 
 header { background-color: var(--primary-color); color: var(--text-color-light); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--box-shadow); position: relative; z-index: 100; }
 .header-content { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.25rem; }
@@ -49,7 +34,7 @@ header nav a { color: var(--text-color-light); text-decoration: none; font-size:
 header nav a:hover { background-color: rgba(255, 255, 255, 0.1); color: var(--highlight-color); }
 
 #container { flex: 1; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; max-width: 1800px; margin: 0 auto; }
-#media-controls { display: flex; gap: 1rem; margin-bottom: 1rem; }
+#media-controls { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; justify-content: center; }
 
 .control-btn, .feature-btn, .view-toggle-btn { background-color: var(--accent-color); color: var(--text-color-light); border: none; padding: 0.75rem 1.25rem; border-radius: var(--border-radius); cursor: pointer; font-size: 0.95rem; transition: var(--transition-fast); display: flex; align-items: center; gap: 0.5rem; box-shadow: var(--box-shadow); }
 .control-btn:hover, .feature-btn:hover, .view-toggle-btn:hover { background-color: var(--secondary-color); transform: translateY(-2px); box-shadow: var(--box-shadow-heavy); }
@@ -58,11 +43,11 @@ header nav a:hover { background-color: rgba(255, 255, 255, 0.1); color: var(--hi
 
 #main-content { display: flex; width: 100%; gap: 1.5rem; align-items: flex-start; }
 #video-section { flex: 1; display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
-#videoWrapper { position: relative; width: 100%; padding-top: 75%; background-color: #000; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow-heavy); }
+#videoWrapper { position: relative; width: 100%; padding-top: 75%; background-color: #000; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow-heavy); touch-action: none; }
 #webcam { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 #overlay { position: absolute; background-color: rgba(200, 236, 55, 0.25); border: 2px dashed var(--highlight-color); display: none; pointer-events: none; z-index: 10; }
 .view-controls { display: flex; justify-content: center; gap: 1rem; }
-.view-toggle-btn.active { background-color: var(--highlight-color); color: #000000; /* Contraste Aprimorado */ font-weight: bold; }
+.view-toggle-btn.active { background-color: var(--highlight-color); color: #000000; font-weight: bold; }
 
 #output-section { flex: 1; display: flex; flex-direction: column; min-width: 0; height: calc(0.75 * (50vw - 1.5rem - 0.75rem) + 1rem + 3.5rem); max-height: 750px; }
 .output-view { display: flex; flex-direction: column; height: 100%; width: 100%; position: relative; }
@@ -74,7 +59,7 @@ header nav a:hover { background-color: rgba(255, 255, 255, 0.1); color: var(--hi
 .export-options { display: flex; align-items: center; gap: 0.5rem; }
 #exportFormat { padding: 0.5rem; border-radius: var(--border-radius); border: 1px solid rgba(0, 0, 0, 0.1); background-color: var(--text-color-light); font-size: 0.9rem; color: var(--primary-color); }
 .feature-btn { background-color: var(--accent-color); padding: 0.6rem 1rem; }
-.feature-btn:hover { background-color: var(--highlight-color); color: #000000; /* Contraste Aprimorado */ }
+.feature-btn:hover { background-color: var(--highlight-color); color: #000000; }
 
 .fullscreen-btn { position: absolute; bottom: 0.5rem; z-index: 20; background-color: rgba(0,0,0,0.5); color: white; }
 .fullscreen-btn:hover { background-color: rgba(0,0,0,0.8); }
@@ -141,7 +126,7 @@ body.achromatopsia-mode { filter: grayscale(100%) contrast(130%); }
 #fullscreen-text-zoom-controls.visible { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 
 #fullscreen-text-zoom-controls button { background-color: var(--accent-color); color: var(--text-color-light); border: none; width: 60px; height: 60px; border-radius: 50%; font-size: 1.8rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-fast), transform 0.1s ease; box-shadow: var(--box-shadow); }
-#fullscreen-text-zoom-controls button:hover { background-color: var(--highlight-color); color: #000000; /* Contraste Aprimorado */ }
+#fullscreen-text-zoom-controls button:hover { background-color: var(--highlight-color); color: #000000; }
 #fullscreen-text-zoom-controls button:active { transform: scale(0.95); }
 
 @media (max-width: 1200px) {
@@ -156,6 +141,8 @@ body.achromatopsia-mode { filter: grayscale(100%) contrast(130%); }
 @media (max-width: 768px) {
     header { flex-direction: column; gap: 0.75rem; padding: 0.8rem 1rem; }
     .header-content { order: -1; }
+    #media-controls { flex-direction: column; align-items: stretch; }
+    #media-controls .control-btn { width: 100%; justify-content: center; }
     #container { padding: 1rem; }
     #zoom-view canvas, #resultbox { min-height: 300px; }
     .features { flex-direction: column; gap: 0.75rem; padding: 1rem; }
@@ -165,6 +152,6 @@ body.achromatopsia-mode { filter: grayscale(100%) contrast(130%); }
     #fullscreen-text-zoom-controls button { width: 50px; height: 50px; font-size: 1.5rem; }
 }
 
-*:focus { outline: none; } /* Remove outline padrão para usar focus-visible */
+*:focus { outline: none; }
 *:focus-visible { outline: 3px solid var(--highlight-color) !important; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(76, 76, 158, 0.5) !important; border-radius: var(--border-radius); }
 #accessibility-options *:focus-visible { outline-color: var(--accent-color) !important; box-shadow: 0 0 0 5px rgba(76, 76, 158, 0.3) !important; }

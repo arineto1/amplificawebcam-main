@@ -30,13 +30,14 @@
         <div id="media-controls">
             <button id="start-webcam-btn" class="control-btn" type="button"><i class="fas fa-video" aria-hidden="true"></i> Iniciar Webcam</button>
             <button id="reset-camera-btn" class="control-btn hidden" type="button"><i class="fas fa-sync-alt" aria-hidden="true"></i> Reiniciar Câmera</button>
+            <button id="switch-camera-btn" class="control-btn hidden" type="button"><i class="fas fa-camera-rotate" aria-hidden="true"></i> Alternar Câmera</button>
         </div>
 
         <div id="main-content" class="hidden">
             <section id="video-section" aria-labelledby="video-section-title">
                 <h2 id="video-section-title" class="visually-hidden">Controle e Visualização da Webcam</h2>
                 <div id="videoWrapper">
-                    <video id="webcam" autoplay playsinline width="1000" height="750" aria-label="Feed da webcam. Use o mouse para selecionar uma área para zoom ou transcrição."></video>
+                    <video id="webcam" autoplay playsinline width="1000" height="750" aria-label="Feed da webcam. Use o mouse ou toque para selecionar uma área para zoom ou transcrição."></video>
                     <div id="overlay" aria-hidden="true"></div>
                 </div>
                 <div class="view-controls" role="tablist" aria-label="Modos de visualização">
@@ -127,6 +128,6 @@
              <button id="close-accessibility-panel-btn" class="control-btn" type="button" aria-label="Fechar menu de acessibilidade"><i class="fas fa-times" aria-hidden="true"></i> Fechar</button>
         </div>
     </div>
-    <script src="script.js" defer></script>
+    <script src="script2.js" defer></script>
 </body>
 </html>
